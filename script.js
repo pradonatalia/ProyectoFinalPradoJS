@@ -109,10 +109,11 @@ function renderizarCarrito(array) {
     
 }
 
+
 function vaciarCarrito(carritoFisico){    
     sessionStorage.removeItem("carritoFisico")     
     carritoFisico=[]    
-    renderizarCarrito(carritoFisico)             
+    renderizarCarrito(carritoFisico)                
 }
 
 function buscar(array, value) {
