@@ -45,7 +45,7 @@ function renderizar(array) {
         </div>            `
         contenedor.appendChild(tarjetaProducto)
         let agregarACarrito = document.getElementById(id)
-        agregarACarrito.addEventListener("click", (e) => agregarAlCarrito(e.target.id, carritoFisico, array, contenedor))
+        agregarACarrito.addEventListener("click", (e) => agregarAlCarrito(e.target.id, carritoFisico, array))
         if (stock===0){
             agregarACarrito.remove()
         }        
