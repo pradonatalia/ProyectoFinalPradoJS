@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Prendas hechas a mano, con amor">
+    <title> Punto Sur</title>
+    <link rel="shortcut icon" href="./imagenes/logo_PuntoSurColor.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="botonera">
+            <ul>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="botonera">
+            <ul>
+                <li><input id="buscador" class="campo" type="text" placeholder="Buscar prenda"></li>
+                <li><button id="botonCarrito" class="botonDos"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg></button></li>
+                <li><button id="botonShop" class="oculto"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                            <path
+                                d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+                        </svg></button></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="marca">
+            <img class="logo" src="./imagenes/logo_PuntoSurColor.png" alt="logo de la marca de indumentaria Punto Sur">
+        </div>
+        <div id="contenedorShop">
+            <div id="contenedor"></div>
+        </div>        
+        <div id="carrito" class="oculto"></div>                
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
