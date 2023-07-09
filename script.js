@@ -5,7 +5,10 @@ function miEcommerce() {
         { id: 3, nombre: "Pijama Zoo", categoría: "Otoño", stock: 8, precio: 9050, descripcion: "Pijama fresco y cómodo de Otoño", imagen: "pijama.jpg" },
         { id: 4, nombre: "Buzo Azul Claro", categoría: "Otoño", stock: 7, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoceleste.jpg" },
         { id: 5, nombre: "Top Flores", categoría: "Otoño", stock: 2, precio: 6000, descripcion: "Top con flores y tiras de Invierno", imagen: "topcolor.png" },
-        { id: 6, nombre: "Buzo Celeste con Polar", categoría: "Invierno", stock: 5, precio: 9050, descripcion: "Buzo grueso interior polar para el Invierno", imagen: "buzogruesoceleste.jpg" }
+        { id: 6, nombre: "Buzo Celeste con Polar", categoría: "Invierno", stock: 5, precio: 9050, descripcion: "Buzo grueso interior polar para el Invierno", imagen: "buzogruesoceleste.jpg" },
+        { id: 7, nombre: "Buzo Tricolor", categoría: "Otoño", stock: 11, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoamarillo.png" },
+        { id: 8, nombre: "Conjunto Rayado", categoría: "Invierno", stock: 6, precio: 12450, descripcion: "Conjunto deportivo para Invierno", imagen: "conjuntoverde.jpg" },
+        { id: 9, nombre: "Top Claro", categoría: "Otoño", stock: 12, precio: 9050, descripcion: "Top fino de Otoño", imagen: "topclaro.png" }
     ]
 
     renderizar(puntoSur)
@@ -65,7 +68,19 @@ function agregarAlCarrito(id, carritoFisico, array) {
             precio: productoSeleccionado.precio,
             unidades: 1,
         })
-    }    
+    } 
+    Toastify({
+
+        text: "Producto agregado al carrito",
+        position: "right",
+        gravity: "bottom",
+        close: true,
+        style: {
+            background: "rgb(249, 132, 74)",
+          },               
+        duration: 3000,
+        
+        }).showToast();        
     array[posicionProductoSeleccionado].stock = array[posicionProductoSeleccionado].stock - 1
     renderizarCarrito(carritoFisico)
     sessionStorage.setItem("carritoFisico", JSON.stringify(carritoFisico))
@@ -113,7 +128,9 @@ function renderizarCarrito(array) {
 function vaciarCarrito(carritoFisico){    
     sessionStorage.removeItem("carritoFisico")     
     carritoFisico=[]    
-    renderizarCarrito(carritoFisico)                
+    renderizarCarrito(carritoFisico) 
+    //se puede agregar toastify cada vez que se agrega algo al carrito, probar pasar por parámetro
+              
 }
 
 function buscar(array, value) {

@@ -14,45 +14,50 @@ main {
     font-family: 'Dosis', sans-serif;
 }
 
-nav {    
-    width: 100%;    
+nav {
+    background-color: white;
+    width: 100%;
+    height: 120px;
     display: flex;
     justify-content: space-between;
-    align-items:center;    
+    align-items: center;
+    position: sticky;
+    top: 0;   
+
 }
 
 .botonera ul li {
-    display: inline-block;    
+    display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .botonera ul li a {
     text-decoration: none;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     color: black;
-    font-family: 'Belanosima', sans-serif;    
+    font-family: 'Belanosima', sans-serif;
     font-size: large;
 }
 
 .campo {
-    display:block;
+    display: block;
     width: 100px;
-    outline: none;    
-    padding: 10px;    
+    outline: none;
+    padding: 10px;
     border: 0;
-    border-bottom: 2px solid rgb(155, 34, 38);      
+    border-bottom: 2px solid rgb(155, 34, 38);
     background-color: white;
 }
 
 .botonDos {
     padding: 10px;
-    background-color: white;    
-    border-color:rgb(155, 34, 38);
+    background-color: white;
+    border-color: rgb(155, 34, 38);
     border-radius: 30px;
-    color:rgb(155, 34, 38);
-    cursor: pointer;    
+    color: rgb(155, 34, 38);
+    cursor: pointer;
 }
 
 .botonDos:hover {
@@ -60,59 +65,59 @@ nav {
     color: white;
 }
 
-input{
+input {
     display: flex;
     justify-content: center;
 }
 
-.marca {    
+.marca {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 30px;    
+    padding-bottom: 30px;
 }
 
-.logo {    
-    height: 150px;    
+.logo {
+    height: 150px;
     margin-top: 10px;
 }
 
 #contenedor {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;     
+    flex-wrap: wrap;
 }
 
 .tarjetaProducto {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     width: 350px;
     height: 550px;
     border: 2px solid white;
     border-radius: 5px;
     margin: 1px;
     padding: 5px;
-    text-align:center;    
+    text-align: center;
 }
 
 .contenedorInfoTarjeta {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin: 5px;    
-    padding: 2px;    
+    margin: 5px;
+    padding: 2px;
     width: 350px;
 
 }
 
 .imagen {
-    background-size:cover;
+    background-size: cover;
     width: 100%;
-    height:400px;    
+    height: 400px;
     background-position: center;
     background-repeat: no-repeat;
-    
+
 }
 
 .imagen:hover {
@@ -121,12 +126,12 @@ input{
 }
 
 .tarjetaCarrito {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    align-items:start;
+    align-items: start;
     width: 400px;
     height: 50px;
-    border: none;    
+    border: none;
     margin: 10px;
 }
 
@@ -134,41 +139,43 @@ input{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 10px;        
+    margin: 10px;
 }
 
 .tarjetaCarritoVacio {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     width: 100vw;
     height: 500px;
     border: 2px solid white;
     border-radius: 5px;
     margin: 0px;
     padding: 0px;
-    text-align:center;    
+    text-align: center;
 }
 
-.imagenCarrito{
-    background-size:cover;
+.imagenCarrito {
+    background-size: cover;
     width: 300px;
-    height:300px;    
+    height: 300px;
     background-position: center;
     background-repeat: no-repeat;
-}  
-
-.botonAgregar, .botonFinalizar {
-    padding: 5px;
-    margin: 5px;    
-    background-color:rgb(42, 157, 143);    
-    border:none;
-    border-radius: 0px;
-    color:white;
-    cursor: pointer;      
 }
 
-.botonAgregar:hover, .botonFinalizar:hover {
+.botonAgregar,
+.botonFinalizar {
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(42, 157, 143);
+    border: none;
+    border-radius: 0px;
+    color: white;
+    cursor: pointer;
+}
+
+.botonAgregar:hover,
+.botonFinalizar:hover {
     background-color: rgb(38, 70, 83);
 }
 
@@ -179,12 +186,12 @@ input{
 .sinStock {
     color: red;
 }
- 
+
 .oculto {
     display: none;
 }
 
 #carrito {
     width: 500px;
-    height: 500px;    
+    height: 500px;
 }
