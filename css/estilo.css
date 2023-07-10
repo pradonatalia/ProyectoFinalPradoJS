@@ -22,6 +22,7 @@ nav {
     position: sticky;
     top: 0;  
     padding-bottom: 20px;
+    z-index: 2;
      
 }
 
@@ -241,6 +242,7 @@ input {
 
   .tituloFooter {
     width: 500px;
+    font-size: large;
   }
 
   footer ul li {
@@ -259,3 +261,15 @@ input {
     text-transform: uppercase;
   }
   
+  @media (max-width: 768px) {
+    .campoDos {
+        width: 80vw;
+    }
+    .tituloFooter {
+        font-size: small;
+    }
+
+  }
+    
+    
+    
