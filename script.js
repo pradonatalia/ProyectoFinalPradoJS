@@ -73,7 +73,7 @@ function agregarAlCarrito(id, carritoFisico, array) {
     Toastify({
 
         text: "Producto agregado al carrito",
-        position: "right",
+        position: "center",
         gravity: "bottom",
         close: true,
         style: {
@@ -144,12 +144,14 @@ function buscar(array, value) {
 function mostarOcultar(botonCarrito, botonShop, buscador) {
     let contenedorShop = document.getElementById("contenedorShop")
     contenedorShop.classList.toggle("oculto")
+    let contacto = document.getElementById("contacto")
+    contacto.classList.toggle("oculto")    
     buscador.classList.toggle("oculto")
     let carrito = document.getElementById("carrito")
     carrito.classList.toggle("oculto")
     botonCarrito.classList.toggle("oculto")
     botonShop.classList.toggle("oculto")
-    botonShop.classList.toggle("botonDos")
+    botonShop.classList.toggle("boton")
 }
 
 
