@@ -17,7 +17,8 @@ function miEcommerce() {
     let botonCarrito = document.getElementById("botonCarrito")
     let botonShop = document.getElementById("botonShop")
     botonCarrito.addEventListener("click", () => mostarOcultar(botonCarrito, botonShop, buscador))
-    botonShop.addEventListener("click", () => mostarOcultar(botonCarrito, botonShop, buscador))         
+    botonShop.addEventListener("click", () => mostarOcultar(botonCarrito, botonShop, buscador))  
+    sessionStorage.setItem("stockOriginal", JSON.stringify(puntoSur))       
 }
 
 miEcommerce()
@@ -84,6 +85,7 @@ function agregarAlCarrito(id, carritoFisico, array) {
     array[posicionProductoSeleccionado].stock = array[posicionProductoSeleccionado].stock - 1
     renderizarCarrito(carritoFisico)
     sessionStorage.setItem("carritoFisico", JSON.stringify(carritoFisico))
+    sessionStorage.setItem("stockRemanente", JSON.stringify(array))
     renderizar(array)       
 }
 
@@ -127,10 +129,10 @@ function renderizarCarrito(array) {
 
 function vaciarCarrito(carritoFisico){    
     sessionStorage.removeItem("carritoFisico")     
-    carritoFisico=[]    
-    renderizarCarrito(carritoFisico) 
-    //se puede agregar toastify cada vez que se agrega algo al carrito, probar pasar por parámetro
-              
+    carritoFisico=[]      
+    renderizarCarrito(carritoFisico)   
+    let stockOriginal = JSON.parse(sessionStorage.getItem("stockOriginal"))        
+    renderizar(stockOriginal)         
 }
 
 function buscar(array, value) {
