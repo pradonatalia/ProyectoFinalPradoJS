@@ -1,44 +1,73 @@
-function miEcommerce() {
-    let puntoSur = [
-        { id: 1, nombre: "Conjunto Lanilla", categoría: "Invierno", stock: 3, precio: 11300, descripcion: "Conjunto de lanilla cómodo y abrigado para el invierno", imagen: "conjuntolanilla.jpg" },
-        { id: 2, nombre: "Capa Azul", categoría: "Otoño", stock: 6, precio: 12000, descripcion: "Capa estampada para dormir en Invierno", imagen: "capazul.jpg" },
-        { id: 3, nombre: "Pijama Zoo", categoría: "Otoño", stock: 8, precio: 9050, descripcion: "Pijama fresco y cómodo de Otoño", imagen: "pijama.jpg" },
-        { id: 4, nombre: "Buzo Azul Claro", categoría: "Otoño", stock: 7, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoceleste.jpg" },
-        { id: 5, nombre: "Top Flores", categoría: "Otoño", stock: 2, precio: 6000, descripcion: "Top con flores y tiras de Invierno", imagen: "topcolor.png" },
-        { id: 6, nombre: "Buzo Celeste con Polar", categoría: "Invierno", stock: 5, precio: 9050, descripcion: "Buzo grueso interior polar para el Invierno", imagen: "buzogruesoceleste.jpg" },
-        { id: 7, nombre: "Buzo Tricolor", categoría: "Otoño", stock: 11, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoamarillo.png" },
-        { id: 8, nombre: "Conjunto Rayado", categoría: "Invierno", stock: 6, precio: 12450, descripcion: "Conjunto deportivo para Invierno", imagen: "conjuntoverde.jpg" },
-        { id: 9, nombre: "Top Claro", categoría: "Otoño", stock: 12, precio: 9050, descripcion: "Top fino de Otoño", imagen: "topclaro.png" }
-    ]
 
-    renderizar(puntoSur)
+
+// let puntoSur = [
+//     { id: 1, nombre: "Conjunto Lanilla", categoría: "Invierno", stock: 3, precio: 11300, descripcion: "Conjunto de lanilla cómodo y abrigado para el invierno", imagen: "conjuntolanilla.jpg" },
+//     { id: 2, nombre: "Capa Azul", categoría: "Otoño", stock: 6, precio: 12000, descripcion: "Capa estampada para dormir en Invierno", imagen: "capazul.jpg" },
+//     { id: 3, nombre: "Pijama Zoo", categoría: "Otoño", stock: 8, precio: 9050, descripcion: "Pijama fresco y cómodo de Otoño", imagen: "pijama.jpg" },
+//     { id: 4, nombre: "Buzo Azul Claro", categoría: "Otoño", stock: 7, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoceleste.jpg" },
+//     { id: 5, nombre: "Top Flores", categoría: "Otoño", stock: 2, precio: 6000, descripcion: "Top con flores y tiras de Invierno", imagen: "topcolor.png" },
+//     { id: 6, nombre: "Buzo Celeste con Polar", categoría: "Invierno", stock: 5, precio: 9050, descripcion: "Buzo grueso interior polar para el Invierno", imagen: "buzogruesoceleste.jpg" },
+//     { id: 7, nombre: "Buzo Tricolor", categoría: "Otoño", stock: 11, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoamarillo.png" },
+//     { id: 8, nombre: "Conjunto Rayado", categoría: "Invierno", stock: 6, precio: 12450, descripcion: "Conjunto deportivo para Invierno", imagen: "conjuntoverde.jpg" },
+//     { id: 9, nombre: "Top Claro", categoría: "Otoño", stock: 12, precio: 9050, descripcion: "Top fino de Otoño", imagen: "topclaro.png" }
+// ]
+
+// console.log(puntoSur)
+
+const urlLocal = './db.json';
+    let arrayDeProductos = []
+
+    fetch(urlLocal)
+        .then(response => response.json())
+        .then(data => {
+            arrayDeProductos = data.arrayDeProductos        
+            miEcommerce(arrayDeProductos)  
+        }
+        )
+
+function miEcommerce(arrayDeProductos) {
+    
+        
+    // let puntoSur = [
+    //     { id: 1, nombre: "Conjunto Lanilla", categoría: "Invierno", stock: 3, precio: 11300, descripcion: "Conjunto de lanilla cómodo y abrigado para el invierno", imagen: "conjuntolanilla.jpg" },
+    //     { id: 2, nombre: "Capa Azul", categoría: "Otoño", stock: 6, precio: 12000, descripcion: "Capa estampada para dormir en Invierno", imagen: "capazul.jpg" },
+    //     { id: 3, nombre: "Pijama Zoo", categoría: "Otoño", stock: 8, precio: 9050, descripcion: "Pijama fresco y cómodo de Otoño", imagen: "pijama.jpg" },
+    //     { id: 4, nombre: "Buzo Azul Claro", categoría: "Otoño", stock: 7, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoceleste.jpg" },
+    //     { id: 5, nombre: "Top Flores", categoría: "Otoño", stock: 2, precio: 6000, descripcion: "Top con flores y tiras de Invierno", imagen: "topcolor.png" },
+    //     { id: 6, nombre: "Buzo Celeste con Polar", categoría: "Invierno", stock: 5, precio: 9050, descripcion: "Buzo grueso interior polar para el Invierno", imagen: "buzogruesoceleste.jpg" },
+    //     { id: 7, nombre: "Buzo Tricolor", categoría: "Otoño", stock: 11, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoamarillo.png" },
+    //     { id: 8, nombre: "Conjunto Rayado", categoría: "Invierno", stock: 6, precio: 12450, descripcion: "Conjunto deportivo para Invierno", imagen: "conjuntoverde.jpg" },
+    //     { id: 9, nombre: "Top Claro", categoría: "Otoño", stock: 12, precio: 9050, descripcion: "Top fino de Otoño", imagen: "topclaro.png" }
+    // ]
+    console.log(arrayDeProductos)
+    renderizar(arrayDeProductos)
     let buscador = document.getElementById("buscador")
-    buscador.addEventListener("input", () => buscar(puntoSur, buscador.value))
+    buscador.addEventListener("input", () => buscar(arrayDeProductos, buscador.value))
     let botonCarrito = document.getElementById("botonCarrito")
     let botonShop = document.getElementById("botonShop")
     botonCarrito.addEventListener("click", () => mostarOcultar(botonCarrito, botonShop, buscador))
-    botonShop.addEventListener("click", () => mostarOcultar(botonCarrito, botonShop, buscador))  
-    sessionStorage.setItem("stockOriginal", JSON.stringify(puntoSur))       
+    botonShop.addEventListener("click", () => mostarOcultar(botonCarrito, botonShop, buscador))
+    sessionStorage.setItem("stockOriginal", JSON.stringify(arrayDeProductos))
 }
 
-miEcommerce()
+// miEcommerce()
 
 function renderizar(array) {
     let contenedor = document.getElementById("contenedor")
     let carritoJSON = JSON.parse(sessionStorage.getItem("carritoFisico"))
-    let carritoFisico = (carritoJSON) ? carritoJSON : []     
-    renderizarCarrito(carritoFisico)   
+    let carritoFisico = (carritoJSON) ? carritoJSON : []
+    renderizarCarrito(carritoFisico)
     contenedor.innerHTML = ""
     for (const { stock, imagen, nombre, precio, id } of array) {
-        let mensaje = ""        
-        let tarjetaProducto = document.createElement("div")  
+        let mensaje = ""
+        let tarjetaProducto = document.createElement("div")
         if (stock < 5 && stock > 0) {
             mensaje += `- Quedan pocas unidades. Apurate!`
             tarjetaProducto.classList.add("ultimasUnidades")
-        }else if (stock === 0){
-            mensaje +=`- Unidades agotadas`
+        } else if (stock === 0) {
+            mensaje += `- Unidades agotadas`
             tarjetaProducto.classList.add("sinStock")            
-        }      
+        }
         tarjetaProducto.classList.add("tarjetaProducto")
         tarjetaProducto.innerHTML = `        
         <div class=imagen style= "background-image: url(./imagenes/${imagen}")></div>
@@ -50,16 +79,16 @@ function renderizar(array) {
         contenedor.appendChild(tarjetaProducto)
         let agregarACarrito = document.getElementById(id)
         agregarACarrito.addEventListener("click", (e) => agregarAlCarrito(e.target.id, carritoFisico, array))
-        if (stock===0){
+        if (stock === 0) {
             agregarACarrito.remove()
-        }        
-    }    
+        }
+    }
 }
 
 function agregarAlCarrito(id, carritoFisico, array) {
     let productoSeleccionado = array.find(producto => producto.id === Number(id))
     let posicionBuscadaEnCarrito = carritoFisico.findIndex((prenda) => prenda.id === productoSeleccionado.id)
-    let posicionProductoSeleccionado = array.findIndex((prenda) => prenda.id === productoSeleccionado.id)       
+    let posicionProductoSeleccionado = array.findIndex((prenda) => prenda.id === productoSeleccionado.id)
     if (carritoFisico.find((prenda) => prenda.id === productoSeleccionado.id)) {
         carritoFisico[posicionBuscadaEnCarrito].unidades++
     } else {
@@ -69,7 +98,7 @@ function agregarAlCarrito(id, carritoFisico, array) {
             precio: productoSeleccionado.precio,
             unidades: 1,
         })
-    } 
+    }
     Toastify({
 
         text: "Producto agregado al carrito",
@@ -78,61 +107,94 @@ function agregarAlCarrito(id, carritoFisico, array) {
         close: true,
         style: {
             background: "rgb(249, 132, 74)",
-          },               
+        },
         duration: 3000,
-        
-        }).showToast();        
+
+    }).showToast();
     array[posicionProductoSeleccionado].stock = array[posicionProductoSeleccionado].stock - 1
     renderizarCarrito(carritoFisico)
     sessionStorage.setItem("carritoFisico", JSON.stringify(carritoFisico))
     sessionStorage.setItem("stockRemanente", JSON.stringify(array))
-    renderizar(array)       
+    renderizar(array)
 }
 
 function renderizarCarrito(array) {
     let carrito = document.getElementById("carrito")
     carrito.innerHTML = ""
-    let tituloCarrito = document.createElement("div")
-    tituloCarrito.classList.add("tarjetaCarrito")
-    tituloCarrito.innerHTML = `Carrito:`
-    carrito.appendChild(tituloCarrito)
+
     if (array.length > 0) {
-        for (const { nombre, unidades, precio } of array) {
+        let tituloCarrito = document.createElement("div")
+        tituloCarrito.classList.add("tarjetaSubtotal")
+        tituloCarrito.innerHTML = `<h2>Carrito de compras</h2>`
+        carrito.appendChild(tituloCarrito)
+        for (const { nombre, unidades, precio, id } of array) {
             let tarjetaCarrito = document.createElement("div")
             tarjetaCarrito.classList.add("tarjetaCarrito")
             tarjetaCarrito.innerHTML += `
-            <p>${nombre} - cantidad= ${unidades} precio= $${precio * unidades}</p>`
+            <p class=textoCarrito>${nombre}</p>
+            <p class=textoCarrito>cantidad= ${unidades}</p>
+            <p class=textoCarrito>precio= $${precio * unidades}</p>
+            <button id=${id}  class="botonEliminar"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg></button>
+            `            
             carrito.appendChild(tarjetaCarrito)
+            
+            let botonEliminarItem = document.getElementById(id)            
+            botonEliminarItem.addEventListener("click", () => eliminarItem())             
         }
         let subtotal = array.reduce((acum, prenda) => acum + (prenda.precio * prenda.unidades), 0)
         let tarjetaSubtotal = document.createElement("div")
         tarjetaSubtotal.classList.add("tarjetaSubtotal")
         tarjetaSubtotal.innerHTML = `
-        <p>Subtotal= $${subtotal}</p>        
-        <button id=botonVaciar class="botonAgregar">Vaciar carrito</button>`
+        <p class="textoCarrito">Subtotal= $${subtotal}</p>        
+        <button id=botonVaciar class="botonAgregar">Vaciar carrito</button>
+        <button id=botonFinalizar class="botonAgregar">Finalizar compra</button>`
         carrito.appendChild(tarjetaSubtotal)
         let botonVaciarCarrito = document.getElementById("botonVaciar")
-        botonVaciarCarrito.addEventListener("click", () => vaciarCarrito(array))
-        
-    } 
+        let stockOriginal = JSON.parse(sessionStorage.getItem("stockOriginal"))
+        botonVaciarCarrito.addEventListener("click", () => vaciarCarrito(array, stockOriginal, "Se han eliminado todos los productos del carrito"))
+        let botonFinalizarCompra = document.getElementById("botonFinalizar")
+        let stockRemanente = JSON.parse(sessionStorage.getItem("stockRemanente"))
+        botonFinalizarCompra.addEventListener("click", () => vaciarCarrito(array, stockRemanente, "Gracias por su compra. Nos estaremos comunicando con usted para coordinar el envío"))
+
+    }
     else {
         let cajaParaCarritoVacio = document.createElement("div")
         cajaParaCarritoVacio.classList.add("tarjetaCarritoVacio")
-        cajaParaCarritoVacio.innerHTML = `
-        <p>El carrito se encuenta vacío</p>
-        <div class=imagenCarrito style= "background-image: url(./imagenes/carritotriste.jpg")></div>`
+        cajaParaCarritoVacio.innerHTML = `<div class=imagenCarrito style= "background-image: url(./imagenes/carritoDos.png")></div>`
         carrito.appendChild(cajaParaCarritoVacio)
     }
+
+}
+
+function eliminarItem() {
+    
+    // let productoAEliminar = carritoFisico.find(producto => producto.id === Number(id))
+    // console.log(productoAEliminar)
+    // let posicionProductoAEliminar = carritoFisico.findIndex((prenda) => prenda.id === productoAEliminar.id)
+    // carritoFisico[posicionProductoAEliminar].remove()
+    // console.log(carritoFisico)
+    // renderizarCarrito(carritoFisico)
+    // sessionStorage.setItem("carritoFisico", JSON.stringify(carritoFisico))
+
     
 }
 
-
-function vaciarCarrito(carritoFisico){    
-    sessionStorage.removeItem("carritoFisico")     
-    carritoFisico=[]      
-    renderizarCarrito(carritoFisico)   
-    let stockOriginal = JSON.parse(sessionStorage.getItem("stockOriginal"))        
-    renderizar(stockOriginal)         
+function vaciarCarrito(carritoFisico, stock, mensaje) {
+    sessionStorage.removeItem("carritoFisico")
+    carritoFisico = []
+    renderizarCarrito(carritoFisico)
+    renderizar(stock)
+    sessionStorage.setItem("stockOriginal", JSON.stringify(stock))
+    Swal.fire({
+        title: mensaje,
+        icon: 'success',
+        confirmButtonText: 'OK',
+        showConfirmButton: false,
+        timer: 3000,
+    })
 }
 
 function buscar(array, value) {
@@ -145,7 +207,7 @@ function mostarOcultar(botonCarrito, botonShop, buscador) {
     let contenedorShop = document.getElementById("contenedorShop")
     contenedorShop.classList.toggle("oculto")
     let contacto = document.getElementById("contacto")
-    contacto.classList.toggle("oculto")    
+    contacto.classList.toggle("oculto")
     buscador.classList.toggle("oculto")
     let carrito = document.getElementById("carrito")
     carrito.classList.toggle("oculto")
