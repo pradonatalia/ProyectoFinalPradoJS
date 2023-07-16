@@ -83,7 +83,6 @@ nav {
 }
 
 
-
 input {
     display: flex;
     justify-content: center;
@@ -148,23 +147,51 @@ input {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 400px;
-    height: 50px;
-    border: none;
+    width: 500px;
+    height: 200px;     
+    border-radius: 10px;
     margin: 10px;
+    margin-left: 10vw;
+    text-align: start;
+    
     
 }
 
-.textoCarrito {
-    margin: 10px;
+/* .tarjetaCarrito p {
+    margin: 20px;
 
+} */
+
+.contenedorInfoItem{
+    width:200px;
+    height: 200px;
+    padding-left:20px ;
+    
+
+}
+
+.imagenItemCarrito {
+    width: 150px ;
+    height: 200px;
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.contenedorBotonEliminar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
 }
 
 .tarjetaSubtotal {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 10px;
+    margin: 20px;
+    
     
 }
 
@@ -188,6 +215,8 @@ input {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
 
 .botonAgregar,
 .botonFinalizar {
@@ -217,10 +246,11 @@ input {
     display: none;
 }
 
-#carrito {
-    width: 100vw;   
-    height: 600px;
-}
+/* #carrito {
+    display: flex;
+    flex-direction: row;
+    
+} */
 
 .contenedorContacto {
     text-align: center;
@@ -288,7 +318,7 @@ input {
         width: 80vw;
     }
     .tituloFooter {
-        font-size: smaller;
+        display:none;
     }
 
   }
