@@ -24,6 +24,7 @@ const urlLocal = './db.json';
             miEcommerce(arrayDeProductos)  
         }
         )
+        .catch(error => alert("Ocurrió un error"))
 
 function miEcommerce(arrayDeProductos) {
     
@@ -38,8 +39,7 @@ function miEcommerce(arrayDeProductos) {
     //     { id: 7, nombre: "Buzo Tricolor", categoría: "Otoño", stock: 11, precio: 7500, descripcion: "Buzo liviano para días templados de Otoño", imagen: "buzoamarillo.png" },
     //     { id: 8, nombre: "Conjunto Rayado", categoría: "Invierno", stock: 6, precio: 12450, descripcion: "Conjunto deportivo para Invierno", imagen: "conjuntoverde.jpg" },
     //     { id: 9, nombre: "Top Claro", categoría: "Otoño", stock: 12, precio: 9050, descripcion: "Top fino de Otoño", imagen: "topclaro.png" }
-    // ]
-    console.log(arrayDeProductos)
+    // ]    
     renderizar(arrayDeProductos)
     let buscador = document.getElementById("buscador")
     buscador.addEventListener("input", () => buscar(arrayDeProductos, buscador.value))
@@ -125,7 +125,7 @@ function renderizarCarrito(array) {
 
     if (array.length > 0) {
         let tituloCarrito = document.createElement("div")
-        tituloCarrito.classList.add("tarjetaSubtotal")
+        tituloCarrito.classList.add("tarjetaTitulo")
         tituloCarrito.innerHTML = `<h2>Carrito de compras</h2>`
         carrito.appendChild(tituloCarrito)
         for (const { nombre, unidades, precio, id, imagen } of array) {

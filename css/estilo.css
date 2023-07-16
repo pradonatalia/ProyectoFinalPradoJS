@@ -143,18 +143,23 @@ input {
     height: 105%;
 }
 
+/* #contenedorCarrito {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    
+} */
+
 .tarjetaCarrito {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 500px;
+    width: 600px;
     height: 200px;     
     border-radius: 10px;
     margin: 10px;
-    margin-left: 10vw;
-    text-align: start;
-    
-    
+    margin-left: 5vw;
+    text-align: start;       
 }
 
 /* .tarjetaCarrito p {
@@ -164,10 +169,8 @@ input {
 
 .contenedorInfoItem{
     width:200px;
-    height: 200px;
-    padding-left:20px ;
+    height: 200px;   
     
-
 }
 
 .imagenItemCarrito {
@@ -187,11 +190,19 @@ input {
 }
 
 .tarjetaSubtotal {
-    display: flex;
+    display: inline-block;
     flex-direction: row;
     align-items: center;
     margin: 20px;
     
+    
+}
+
+.tarjetaTitulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;    
     
 }
 
@@ -200,7 +211,7 @@ input {
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    height: 600px;
+    height: 70vh;
     border: 2px solid white;
     border-radius: 5px;
     margin: 0px;    
@@ -210,11 +221,12 @@ input {
 
 .imagenCarrito {
     background-size: cover;
-    width: 50vw;
-    height: 50vw;
+    width: 500px;
+    height: 500px;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 
 
@@ -248,9 +260,10 @@ input {
 
 /* #carrito {
     display: flex;
-    flex-direction: row;
-    
+    justify-content: center;
+    flex-wrap: wrap;
 } */
+    
 
 .contenedorContacto {
     text-align: center;
