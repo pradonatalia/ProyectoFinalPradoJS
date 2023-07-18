@@ -160,7 +160,8 @@ input {
     border-radius: 10px;
     margin: 10px;
     margin-left: 5vw;
-    text-align: start;       
+    text-align: start;     
+    /* border: 2px solid black;   */
 }
 
 /* .tarjetaCarrito p {
@@ -180,6 +181,8 @@ input {
     background-size: cover;    
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 10px;
+    
     
 }
 
@@ -333,8 +336,11 @@ input {
         display:none;
     }
     .imagenCarrito {
-        height: 400px;
-        width: 400px;
+        height: 350px;
+        width: 350px;
+    }
+    .imagen:hover{
+        pointer-events: none;
     }
 
   }
