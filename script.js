@@ -100,7 +100,7 @@ function renderizarCarrito(array) {
         tituloCarrito.classList.add("tarjetaTitulo")
         tituloCarrito.innerHTML = `<h2>Carrito de compras</h2>`
         carrito.appendChild(tituloCarrito)
-        for (const { nombre, unidades, precio, id, imagen } of array) {
+        for (const { nombre, unidades, precio, imagen } of array) {
             let tarjetaCarrito = document.createElement("div")
             tarjetaCarrito.classList.add("tarjetaCarrito")
             tarjetaCarrito.innerHTML += `
@@ -134,16 +134,6 @@ function renderizarCarrito(array) {
         cajaParaCarritoVacio.innerHTML = `<div class=imagenCarrito style= "background-image: url(./imagenes/carritoDos.png")></div>`
         carrito.appendChild(cajaParaCarritoVacio)
     }
-}
-
-function eliminarItem(id) {
-    // let productoAEliminar = carritoFisico.find(producto => producto.id === Number(id))
-    // console.log(productoAEliminar)
-    // let posicionProductoAEliminar = carritoFisico.findIndex((prenda) => prenda.id === productoAEliminar.id)
-    // carritoFisico[posicionProductoAEliminar].remove()
-    // console.log(carritoFisico)
-    // renderizarCarrito(carritoFisico)
-    // sessionStorage.setItem("carritoFisico", JSON.stringify(carritoFisico))
 }
 
 function vaciarCarrito(carritoFisico, stock, mensaje) {
